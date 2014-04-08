@@ -1,0 +1,151 @@
+#updateting packages 
+sudo apt-get update
+sudo apt-get upgrade
+
+---
+
+#Install terminal yakuake 
+sudo apt-get install yakuake
+
+---
+
+#Installing lapm server 
+sudo tasksel
+
+---
+
+#Installing PPA manager
+sudo add-apt-repository ppa:webupd8team/y-ppa-manager
+sudo apt-get update
+sudo apt-get install y-ppa-manager
+
+---
+
+#Updating php version
+sudo add-apt-repository ppa:ondrej/php5
+If you get an error message now, then please do an update first and install the python-software-properties, that need to be necessary to add a package repository:
+
+sudo apt-get update
+sudo apt-get install python-software-properties
+sudo apt-get update
+sudo apt-get install php5
+sudo apt-get install php5-xdebug
+Check the installed version of PHP via
+php5 -v
+
+---
+
+#activate mode rewrite 
+sudo a2enmod rewrite
+/etc/apache2/
+run all directory with your text editor - example - subl . &
+go to site-enabled and open 000-default file and enter this code if isnt there:
+
+<Directory /var/www/>
+		Options Indexes FollowSymLinks
+		AllowOverride all
+		Require all granted
+</Directory>
+
+if it`s exists chnge AllowOverride none to AllowOverride all
+---
+
+#install phpmyadmin
+sudo add-apt-repository ppa:nijel/phpmyadmin
+sudo apt-get update
+sudo apt-get install python-software-properties
+sudo apt-get update
+
+Check the available version, have a look on the “Candidate” line (you should see the latest version of the package):
+
+sudo apt-cache policy phpmyadmin
+sudo apt-get install phpmyadmin
+
+---
+
+#Install NodeJS and curl and Git
+sudo add-apt-repository ppa:richarvey/nodejs #or sudo apt-get-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs npm
+sudo apt-get install curl
+sudo apt-get install git
+
+---
+
+#Set premmisions to var-www
+sudo chmod -R 777 /var/www -R means that is including all folders and files inside directory
+
+---
+
+#add user to group
+usermod -G group name user name
+
+---
+
+#change ovnership of directory or file 
+sudo chown viktorino /var/www/
+chown -R viktorino /var/www/    -R means that is including all folders and files inside directory
+
+---
+
+#Install Wine windows emulator programm
+sudo add-apt-repository ppa:ubuntu-wine/ppa 
+sudo apt-get install wine
+
+
+#Install Sublime-text-3 "3059"
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo apt-get update 
+sudo apt-get install sublime-text-installer=3059-2~webupd8~0
+subl -v
+
+---
+#Remove sublime-text-3
+sudo apt-get remove sublime-text-installer
+sudo apt-get purge sublime-text-installer //removing settings to//
+
+#if setting not be removed use
+cd  
+cd .config
+sudo rm -rf sublime-text-3 
+
+--
+
+#change ownership of sublime-text-3
+cd  
+cd .config
+sudo chown -R $USER:$USER sublime-text-3
+ls -la | grep sublime-text-3  //see who the owner.
+
+#Screen hunter programm 
+sudo add-apt-repository ppa:shutter/ppa  
+sudo apt-get update && sudo apt-get install shutter
+
+---
+
+#Setting owner ship to user and group www-data
+sudo chown -R $USER:www-data /var/www
+
+---
+
+#sewting privelegies to folder wp-content 
+sudo chmode -R 0775 wp-content 
+
+
+#Package for Galaxy s4 camera connection
+sudo add-apt-repository ppa:langdalepl/gvfs-mtp
+sudo apt-get update
+
+#and if you want you can remove it like this
+sudo ppa-purge ppa:langdalepl/gvfs-mtp
+
+---
+
+#Fixe errors 404 
+sudo add-apt-repository ppa:fossfreedom/packagefixes
+sudo apt-get update
+sudo apt-get install banish404
+
+#How to use:
+sudo banish404
+
