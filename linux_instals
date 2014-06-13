@@ -85,6 +85,15 @@ After adding required PPA file, lets install nodejs package. NPM will also be in
 
 $ sudo apt-get install nodejs
 
+
+---
+
+
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install -y node.js
+sudo npm install -g node-gyp bower grunt-cli coffee-script karma express js2coffee nodemon jade html2jade
+
 ---
 
 #Set premmisions to var-www
